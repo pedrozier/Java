@@ -43,11 +43,11 @@ public class TelaIdade extends javax.swing.JFrame {
 
         jLabel2.setText("Idade");
 
-        jLabel3.setText("Situação");
+        jLabel3.setText("Voto é");
 
         jScrollPane1.setViewportView(txtAno);
 
-        jButton1.setText("Calcular");
+        jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -111,8 +111,14 @@ public class TelaIdade extends javax.swing.JFrame {
         int ano = Integer.parseInt(txtAno.getText());
         int idade = 2021 - ano;
         lblIdade.setText(Integer.toString(idade));
-        String sit = ((idade >=16 && idade<18) || (idade>=70))?"VOTO OPCIONAL": "VOTO OBRIGATORIO";
-        lblSituacao.setText(sit);
+        if(idade < 16){
+        lblSituacao.setText("Proibido");
+        }else if((idade >= 16 && idade<18) || (idade >70)){
+                lblSituacao.setText("Opicional");
+            }else{
+                lblSituacao.setText("Obrigatorio");
+            
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
