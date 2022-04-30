@@ -16,7 +16,6 @@ public class ProgramaIdade {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Scanner t = new Scanner(System.in);
         System.out.println("Digite o ano");
         int nasc = t.nextInt();
